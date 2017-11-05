@@ -1,0 +1,128 @@
+:host{
+    width: 1170px;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+    transition: all ease-in-out .25s;
+    -webkit-transition: all ease-in-out .25s;
+    -moz-transition: all ease-in-out .25s;
+}
+:host.maximize{
+    width: 100%;
+}
+:host .ng-data-report{
+    padding: 0;
+}
+:host .ng-data-report mat-toolbar{
+    margin:0;
+    border-radius: 2px 2px 0 0;
+}
+:host .ng-data-report mat-card-content{
+    margin-bottom: 0;
+}
+:host .spacer {
+    flex: 1 1 auto;
+}
+:host .search{
+    width: 300px;
+}
+:host .search mat-form-field{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 12px;
+    width: 100%;
+}
+:host .paginator{
+    padding: 5px 16px;
+    color: #5c5c5c;
+    font-weight: 400;
+    font-size: 0.8rem;
+    background: whitesmoke;
+    border-radius: 0 0 2px 2px;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    border-top: solid 1px rgba(0,0,0,.12);
+}
+:host .paginator mat-form-field{
+    width: 70px;
+    margin-bottom: -16px;
+    padding-top: 0;
+    text-align: center;
+}
+:host .paginator .counter{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.mat-menu-item{
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+}
+
+
+:host .ng-data-report table{
+    width: 100%;
+    border-spacing: 0;
+}
+:host .ng-data-report table td,
+:host .ng-data-report table th{
+    border-bottom: solid 1px rgba(0,0,0,.12);
+    min-height: 48px;
+    padding: 16px;
+    padding-right: 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+:host .ng-data-report table td[numeric],
+:host .ng-data-report table th[numeric]{
+    text-align: right;
+}
+:host .ng-data-report table th{
+    border-top: solid 1px rgba(0,0,0,.12);
+    border-bottom: solid 1px rgba(0,0,0,.12);
+    background: rgba(0,0,0,.12);
+}
+:host .ng-data-report table tbody td:last-child,
+:host .ng-data-report table thead th:last-child{
+    padding-right: 16px;
+}
+:host .ng-data-report table td[align="right"] .mat-sort-header-container,
+:host .ng-data-report table th[align="right"] .mat-sort-header-container{
+    float: right;
+}
+:host .ng-data-report table th[sort-by]{
+    cursor: pointer;
+    position: relative;
+}
+:host .ng-data-report table th[sort-by]:hover{
+    background: rgba(0,0,0,.20);
+}
+:host .ng-data-report table th[sort-by].active:after{
+    content: '';
+    display: inline;
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;    
+    border-color: rgba(0,0,0,.12)  transparent transparent transparent;
+}
+:host .ng-data-report table td:last-child{
+    border-bottom: none;
+}
+:host .ng-data-report table th[sort-by]:hover:after{
+    border-color: rgba(0,0,0,.25)  transparent transparent transparent;
+}
+:host .ng-data-report table thead.desc th[sort-by]:after{
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent rgba(0,0,0,.12) transparent;
+}
+:host .ng-data-report table thead.desc th[sort-by]:hover:after{
+    border-color: transparent transparent rgba(0,0,0,.25) transparent;
+}

@@ -1,0 +1,67 @@
+<mat-card class="ng-data-report">
+    <mat-toolbar>
+      <button mat-icon-button color="primary" matTooltip="More Options" matTooltipPosition="after" [matMenuTriggerFor]="settingMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+  
+      <span class="spacer"></span>
+      <mat-menu #settingMenu="matMenu" xPosition="after" yPosition="below" [overlapTrigger]="false">
+        <button mat-menu-item (click)="download();" *ngIf="options.download"><mat-icon>file_download</mat-icon>Download</button>
+        <button mat-menu-item (click)="toggleMaximize();" *ngIf="!options.maximize"><mat-icon>fullscreen</mat-icon>Maximize</button>
+        <button mat-menu-item (click)="toggleMaximize();" *ngIf="options.maximize"><mat-icon>fullscreen_exit</mat-icon>Minimize</button>
+        <ng-content select="[ng-report-toolbar]"></ng-content>
+      </mat-menu>
+  
+      <div class="spacer"></div>
+  
+      <div class="search">
+        <form (ngSubmit)="onSearch.emit(filter);">
+          <mat-form-field floatPlaceholder="never">
+            <input matInput placeholder="Input" placeholder="Search by keyword...">
+            <mat-icon matSuffix color="primary">search</mat-icon>
+          </mat-form-field>
+        </form>
+      </div>&nbsp;&nbsp;
+    </mat-toolbar>
+  
+    <mat-card-content>
+      <table>
+        <thead class="desc">
+          <tr>
+            <ng-content select="[ng-report-header]"></ng-content>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <ng-content select="[ng-report-row]"></ng-content>
+        </tbody>
+      </table>
+    </mat-card-content>
+  
+  
+    <div class="paginator">
+      <div class="spacer"></div>
+      <div>
+        <span>Rows per page:</span>
+        <mat-form-field>
+          <mat-select name="perpage" [(ngModel)]="options.rowPerPage" #perpage="ngModel" (change)="paginate()">
+            <mat-option *ngFor="let item of perPageSelector" [value]="item">{{item}}</mat-option>
+            <mat-option [value]="options.totalRows">All</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span class="counter">{{firstIndex}} – {{lastIndex}} of {{options.totalRows}}</span>
+        <button mat-icon-button [disabled]="options.totalRows == 0 || options.currentPage == 1" (click)="paginate('first');">
+          <mat-icon>first_page</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="options.totalRows == 0 || options.currentPage == 1" (click)="paginate('prev');">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="options.totalRows == 0 || options.currentPage == lastPage" (click)="paginate('next');">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="options.totalRows == 0 || options.currentPage == lastPage" (click)="paginate('last');">
+          <mat-icon>last_page</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
