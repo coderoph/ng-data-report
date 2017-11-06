@@ -23,7 +23,7 @@ import { NgDataReportModule } from 'ng-data-report';
 export class AppModule { }
 ```
 
-#### 2. HTML ``
+#### 2. HTML
 
 ```html
 <ng-data-report [options]="options" (onSearch)="searchReport($event);" (onPaginate)="paginate($event);">
