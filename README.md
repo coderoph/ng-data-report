@@ -1,6 +1,5 @@
-# ng-data-table
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+# Material2 Design and Angular Data Report
+[![npm version](https://badge.fury.io/js/ng-data-report.svg)](https://badge.fury.io/js/ng-data-report)
 
 ## Installation
 ```
@@ -24,7 +23,7 @@ import { NgDataReportModule } from 'ng-data-report';
 export class AppModule { }
 ```
 
-#### 2. HTML `NgxLocalStorageModule`
+#### 2. HTML ``
 
 ```html
 <ng-data-report [options]="options" (onSearch)="searchReport($event);" (onPaginate)="paginate($event);">
