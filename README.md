@@ -7,7 +7,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 npm install --save ng-data-report
 ```
 ## Usage
+#### 1. Import `NgDataReportModule`
 
+```ts
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import { NgDataReportModule } from 'ng-data-report';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        NgDataReportModule
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+#### 2. HTML `NgxLocalStorageModule`
 
 ```html
 <ng-data-report [options]="options" (onSearch)="searchReport($event);" (onPaginate)="paginate($event);">
