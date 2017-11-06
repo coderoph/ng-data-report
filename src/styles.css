@@ -1,5 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 body{
     background: rgba(0, 0, 0, .12);
+}
+.ng-data-report table{
+    width: 100%;
+    border-spacing: 0;
+}
+.ng-data-report table td,
+.ng-data-report table th{
+    border-bottom: solid 1px rgba(0,0,0,.12);
+    min-height: 48px;
+    padding: 16px;
+    padding-right: 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+.ng-data-report table td[numeric],
+.ng-data-report table th[numeric]{
+    text-align: right;
+}
+.ng-data-report table th{
+    border-top: solid 1px rgba(0,0,0,.12);
+    border-bottom: solid 1px rgba(0,0,0,.12);
+    background: rgba(0,0,0,.12);
+}
+.ng-data-report table tbody td:last-child,
+.ng-data-report table thead th:last-child{
+    padding-right: 16px;
+}
+.ng-data-report table td[align="right"] .mat-sort-header-container,
+.ng-data-report table th[align="right"] .mat-sort-header-container{
+    float: right;
+}
+.ng-data-report table th[sort-by]{
+    cursor: pointer;
+    position: relative;
+}
+.ng-data-report table th[sort-by]:hover,
+.ng-data-report table th[sort-by].active{
+    background: rgba(0,0,0,.17);
+}
+.ng-data-report table th[sort-by]:after{
+    content: '';
+    display: none;
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;    
+    border-color: rgba(0,0,0,.08)  transparent transparent transparent;
+}
+.ng-data-report table th[sort-by]:hover:after,
+.ng-data-report table th[sort-by].active:after{
+    display: block;
+}
+.ng-data-report table th[sort-by]:hover:after{
+    border-color: rgba(0,0,0,.25)  transparent transparent transparent;
+}
+.ng-data-report table th[sort-by].active:after{
+    border-color: rgba(0,0,0,.40)  transparent transparent transparent;
+}
+.ng-data-report table.desc thead th[sort-by]:after{
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent rgba(0,0,0,.40) transparent;
+}
+.ng-data-report table.desc thead th[sort-by]:hover:after{
+    border-color: transparent transparent rgba(0,0,0,.25) transparent;
+}
+.ng-data-report table.desc thead th[sort-by].acitve:after{
+    border-color: transparent transparent rgba(0,0,0,.40) transparent;
 }

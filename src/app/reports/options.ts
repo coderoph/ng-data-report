@@ -3,6 +3,5 @@ export interface Options {
     rowPerPage  : number,
     totalRows   : number,
     keyword     : string,
-    download    : boolean,
-    maximize    : boolean,
+    order       : string,
 }

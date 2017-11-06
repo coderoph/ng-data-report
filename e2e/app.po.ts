@@ -1,5 +1,5 @@
 import { browser, by, element } from 'protractor';
-
+browser.waitForAngularEnabled(false);
 export class AppPage {
   navigateTo() {
     return browser.get('/');

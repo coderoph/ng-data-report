@@ -1,37 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule , NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Injectable} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CsvService } from "angular2-json2csv";
-import { MatIconModule, MatCardModule, MatToolbarModule, MatMenuModule, MatTooltipModule, MatFormFieldModule, MatButtonModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { ReportsComponent } from './reports/reports.component';
-
+import { NgDataReportModule } from './app.reports';
+import { HttpModule } from '@angular/http';
+import 'hammerjs';
 @NgModule({
-  declarations: [
-    AppComponent,
-    ReportsComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-
-    MatCardModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatSelectModule
+    NgDataReportModule,
+    HttpModule
   ],
-  exports: [
-    ReportsComponent
-  ],
-  providers: [CsvService],
-  bootstrap: [AppComponent]
+  exports : [NgDataReportModule],
+  bootstrap : [AppComponent]
 })
-export class NgDataReport { }
+export class AppModule { }
